@@ -1,4 +1,6 @@
-package ru.job4j.tracker;
+package ru.job4j.pojo;
+
+import ru.job4j.tracker.Item;
 
 import java.time.format.DateTimeFormatter;
 
