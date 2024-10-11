@@ -15,6 +15,16 @@ public class Item {
         this.name = name;
     }
 
+    public Item(int id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, created);
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -24,17 +34,8 @@ public class Item {
             return false;
         }
         Item item = (Item) o;
-        return id == item.id && Objects.equals(name, item.name) && Objects.equals(created, item.created);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, name, created);
-    }
-
-    public Item(int id, String name) {
-        this.id = id;
-        this.name = name;
+        return id == item.id && Objects.equals(name, item.name)
+            && Objects.equals(created, item.created);
     }
 
     public int getId() {
