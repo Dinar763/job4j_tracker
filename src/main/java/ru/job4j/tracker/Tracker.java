@@ -51,6 +51,7 @@ public class Tracker {
             item.setId(id);
             items[index] = item;
             return true;
-        } return false;
+        }
+        return false;
     }
 }
