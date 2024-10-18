@@ -55,7 +55,6 @@ public class Tracker {
         return false;
     }
 
-    /** @noinspection checkstyle:RightCurly*/
     public void delete(int id) {
         int index = indexOf(id);
         int start = index + 1;
