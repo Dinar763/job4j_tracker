@@ -45,7 +45,7 @@ public class StartUI {
                 Item item = tracker.findById(id);
                 tracker.delete(id);
                 System.out.println(item != null ? "Заявка удалена успешно."
-                    : "Ошибка удаления заявки.");
+                    : "Ошибка удаления заявки, такая заявка отсутствует.");
             } else if (select == 4) {
                 System.out.println("=== Вывод заявки по id ===");
                 System.out.print("Введите id: ");
