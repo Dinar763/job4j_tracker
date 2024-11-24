@@ -26,8 +26,7 @@ class StartUITest {
         Item item = tracker.add(new Item("Replaced item"));
         String replacedName = "New item name";
         Input input = new MockInput(
-            new String[] {"0", "1", replacedName, "1"}
-        );
+            new String[] {"0", "1", replacedName, "1"});
         UserAction[] actions = {
             new ReplaceAction(output),
             new ExitAction(output)
