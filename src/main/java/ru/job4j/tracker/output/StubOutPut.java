@@ -1,4 +1,4 @@
-package ru.job4j.tracker;
+package ru.job4j.tracker.output;
 
 public class StubOutPut implements Output {
     private final StringBuilder buffer = new StringBuilder();
