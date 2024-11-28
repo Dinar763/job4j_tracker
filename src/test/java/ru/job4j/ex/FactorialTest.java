@@ -14,4 +14,10 @@ class FactorialTest {
             });
         assertThat(exception.getMessage()).isEqualTo("Number could not be less than 0");
     }
+
+    @Test
+    public void calcWhenNumberIs5Succesfully() {
+        int result = Factorial.calc(5);
+        assertEquals(120, result);
+    }
 }
