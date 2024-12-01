@@ -6,17 +6,18 @@ public class FindEl {
         for (int i = 0; i < value.length; i++) {
             if (value[i].equals(key)) {
                 result = i;
+                break;
             }
         }
         if (result == -1) {
-            throw new ElementNotFoundException("Ýëåìåíò íå íàéäåí");
+            throw new ElementNotFoundException("Ð­Ð»ÐµÐ¼ÐµÐ½Ñ‚ Ð½Ðµ Ð½Ð°Ð¹Ð´ÐµÐ½");
         }
         return result;
     }
 
     public static void main(String[] args) {
         try {
-            indexOf(new String[]{"nananan hhfhdhd", "dkdkdjf", "skskskskp"}, "ferer");
+            indexOf(new String[]{"nananan hhfhdhd", "dkdkdjf", "skskskskp"}, "dkdkdjf");
         } catch (ElementNotFoundException e) {
             e.printStackTrace();
         }
