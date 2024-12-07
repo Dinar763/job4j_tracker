@@ -29,6 +29,8 @@ public class PasswordValidator {
             }
             if (!Character.isLetterOrDigit(symbol)) {
                 hasSpecial = true;
+            }
+            if (hasUpCase && hasDigit && hasLowCase && hasSpecial) {
                 break;
             }
         }
