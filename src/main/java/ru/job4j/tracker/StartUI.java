@@ -8,6 +8,8 @@ import ru.job4j.tracker.input.ValidateInput;
 import ru.job4j.tracker.output.Output;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 import static java.lang.System.out;
 
@@ -18,7 +20,7 @@ public class StartUI {
         this.output = output;
     }
 
-    public void init(Input input, Tracker tracker,  ArrayList<UserAction> actions) {
+    public void init(Input input, Tracker tracker,  List<UserAction> actions) {
         boolean run = true;
         while (run) {
             showMenu(actions);
@@ -32,7 +34,7 @@ public class StartUI {
         }
     }
 
-    private void showMenu(ArrayList<UserAction> actions) {
+    private void showMenu(List<UserAction> actions) {
         output.println("Меню:");
         for (int index = 0; index < actions.size(); index++) {
             output.println(index + ". " + actions.get(index).name());
@@ -43,15 +45,16 @@ public class StartUI {
         Output output = new ConsoleOutput();
         Input input = new ValidateInput(output, new ConsoleInput());
         Tracker tracker = new Tracker();
-        ArrayList<UserAction> actions = new ArrayList<>();
-        actions.add(new CreateAction(output));
-        actions.add(new CreateAction(output));
-        actions.add(new FindAllAction(output));
-        actions.add(new ReplaceAction(output));
-        actions.add(new DeleteAction(output));
-        actions.add(new FindByIdAction(output));
-        actions.add(new FindByNameAction(output));
-        actions.add(new ExitAction(output));
+        List<UserAction> actions = Arrays.asList(
+        new CreateAction(output),
+        new CreateAction(output),
+        new FindAllAction(output),
+        new ReplaceAction(output),
+        new DeleteAction(output),
+        new FindByIdAction(output),
+        new FindByNameAction(output),
+        new ExitAction(output)
+        );
 
         new StartUI(output).init(input, tracker, actions);
     }
