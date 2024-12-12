@@ -10,7 +10,7 @@ public class UsageHashSet {
         autos.add("Volvo");
         autos.add("Toyota");
 
-        for (Object value: autos) {
+        for (String value: autos) {
             System.out.println(value);
         }
     }
