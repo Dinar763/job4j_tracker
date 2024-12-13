@@ -28,9 +28,9 @@ public class ReconstructPhrase {
 
     private String getDescendingElements() {
         StringBuilder stringBuilder2 = new StringBuilder();
-        Iterator<Character> iterator = descendingElements.descendingIterator();
-        while (iterator.hasNext()) {
-            stringBuilder2.append(iterator.next().toString());
+        while (!descendingElements.isEmpty()) {
+            Character c = descendingElements.removeLast();
+            stringBuilder2.append(c);
         }
         return stringBuilder2.toString();
     }
