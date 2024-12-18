@@ -38,7 +38,6 @@ public class Item {
         }
         Item item = (Item) o;
         return id == item.id && Objects.equals(name, item.name);
-            //&& Objects.equals(created, item.created);
     }
 
     @Override
