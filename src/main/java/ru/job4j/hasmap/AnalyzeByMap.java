@@ -37,7 +37,6 @@ public class AnalyzeByMap {
         for (Pupil pupil: pupils) {
             for (Subject subject: pupil.subjects()) {
                 map.merge(subject.name(), subject.score(), Integer::sum);
-                //map.put(subject.name(), map.getOrDefault(subject.name(), 0) + subject.score());
             }
             setOfName.add(pupil.name());
         }
