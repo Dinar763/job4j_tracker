@@ -36,7 +36,8 @@ public class AnalyzeByMap {
         Set<String> setOfName = new HashSet<>();
         for (Pupil pupil: pupils) {
             for (Subject subject: pupil.subjects()) {
-                map.put(subject.name(), map.getOrDefault(subject.name(), 0) + subject.score());
+                map.merge(subject.name(), subject.score(), Integer::sum);
+                //map.put(subject.name(), map.getOrDefault(subject.name(), 0) + subject.score());
             }
             setOfName.add(pupil.name());
         }
@@ -65,7 +66,7 @@ public class AnalyzeByMap {
         Map<String, Integer> map = new HashMap<>();
         for (Pupil pupil: pupils) {
             for (Subject subject: pupil.subjects()) {
-                map.put(subject.name(), map.getOrDefault(subject.name(), 0) + subject.score());
+                map.merge(subject.name(), subject.score(), Integer::sum);
             }
         }
         List<Label> listOfLabel = new ArrayList<>();
