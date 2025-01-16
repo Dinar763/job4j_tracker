@@ -10,9 +10,7 @@ public class ListToMap {
             .collect(Collectors.toMap(
                 key -> key.getSurname(),
                 value -> value,
-                (a, b) -> {
-                    return a.equals(b) ? b : a;
-                }
+                (a, b) -> a
             ));
     }
 }
