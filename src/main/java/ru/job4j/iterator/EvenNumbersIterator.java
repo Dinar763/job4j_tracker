@@ -14,7 +14,11 @@ public class EvenNumbersIterator implements Iterator<Integer> {
 
     @Override
     public boolean hasNext() {
-        return getEvenIndex() != -1;
+        boolean flag = false;
+        while (index < data.length && !isEven(data[index])) {
+            index++;
+        }
+        return index < data.length;
     }
 
     @Override
@@ -22,28 +26,18 @@ public class EvenNumbersIterator implements Iterator<Integer> {
         if (!hasNext()) {
             throw new NoSuchElementException();
         }
-        int neededIndex = getEvenIndex();
-        index = neededIndex + 1;
-        return data[neededIndex];
+        return data[index++];
     }
 
-    public Integer getEvenIndex() {
-        int evenIndex = -1;
-        for (int i = index; i < data.length; i++) {
-            if (data[i] % 2 == 0) {
-                evenIndex = i;
-                break;
-            }
-        }
-        return evenIndex;
+    public boolean isEven(int val) {
+        return val % 2 == 0;
     }
 
     public static void main(String[] args) {
-        Iterator<Integer> iterator = new EvenNumbersIterator(new int[] {1, -3, 2, 3, 5, 5, -4, 5, 6, 7});
+        Iterator<Integer>  iterator = new EvenNumbersIterator(new int[] {1, -3, 3, 5, 5, -4, 5, 7});
+        System.out.println(iterator.hasNext());
+        System.out.println(iterator.hasNext());
         System.out.println(iterator.next());
-        System.out.println(iterator.next());
-        System.out.println(iterator.next());
-        System.out.println(iterator.next());
-        System.out.println(iterator.next());
+        System.out.println(iterator.hasNext());
     }
 }
